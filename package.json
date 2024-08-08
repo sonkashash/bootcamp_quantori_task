@@ -1,0 +1,9 @@
+{
+  "name": "bootcamp_quantori_task",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "Authorization form for test bootcamp_quantori_task",
+  "main": "index.js",
+  "author": "",
+  "license": "ISC"
+}

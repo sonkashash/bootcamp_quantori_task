@@ -1,0 +1,286 @@
+:root {
+    --grey-green: #66837e;
+    --green: #485f4c;
+    --orange: #dd9857;
+    --grey: #9cabb6;
+    --brown: #9d4e2d;
+    --footer-background: #35485e;
+    --color-input: rgb(115, 115, 115);
+    --header-content-height: 30px;
+    --header-height: 50px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style-type: none;
+}
+
+button:hover,
+a:hover {
+    cursor: pointer;
+}
+
+.hidden {
+    display: none;
+}
+
+
+header {
+    height: var(--header-height);
+    padding: 0 40px;
+    display: flex;
+    align-items: center;
+}
+
+
+
+.user_wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100%;
+}
+
+.user {
+    width: 40px;
+    height: 40px;
+    background-color: var(--grey-green);
+    border: 3px solid var(--grey-green);
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+}
+
+.user::before {
+    content: '';
+    display: block;
+    width: 14px;
+    height: 14px;
+    background: #fff;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -70%);
+}
+
+.user::after {
+    content: '';
+    display: block;
+    width: 22px;
+    height: 20px;
+    background: #fff;
+    border-radius: 5px;
+    position: absolute;
+    left: 50%;
+    bottom: -10px;
+    transform: translateX(-50%);
+}
+
+.menu {
+    display: flex;
+    flex-grow: 3;
+}
+
+
+ul {
+    width: 240px;
+    margin-left: 40px;
+    border: 1px solid var(--grey-green);
+    border-radius: 20px;
+    height: var(--header-content-height);
+    display: flex;
+}
+
+
+ul a {
+    color: var(--grey-green)
+}
+
+li {
+    width: calc(100% / 3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+li:first-of-type {
+    border-radius: 20px 0 0 20px;
+}
+
+li:last-of-type {
+    border-radius: 0 20px 20px 0;
+}
+
+li:hover,
+li.active_tab {
+    background-color: var(--grey-green);
+    height: 100%;
+}
+
+li:hover a,
+li.active_tab a {
+    color: #fff;
+}
+
+.invisible_block {
+    flex-grow: 3;
+}
+
+
+.login_btn,
+.submit_btn,
+.cancel_btn {
+    background-color: var(--grey-green);
+    color: #fff;
+    height: var(--header-content-height);
+    border: none;
+    border-radius: 5px;
+    width: 80px;
+
+}
+
+.burger_btn {
+    display: none;
+}
+
+.loader {
+    position: absolute;
+    top: 45%;
+    left: 40%;
+    width: 50px;
+    height: 50px;
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid var(--grey-green);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    z-index: 10;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+main {
+    position: relative;
+    height: 100px;
+    flex-grow: 2;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.rectangle {
+    width: calc(100vw / 3);
+    height: calc(100% / 3);
+}
+
+.grey-green {
+    background-color: var(--grey-green)
+}
+
+.brown {
+    background-color: var(--brown)
+}
+
+.green {
+    background-color: var(--green)
+}
+
+.orange {
+    background-color: var(--orange);
+}
+
+.grey {
+    background-color: var(--grey);
+}
+
+footer {
+    height: 20px;
+    text-align: right;
+    padding-inline: 40px;
+    padding-top: 5px;
+    color: #fff;
+    background-color: var(--footer-background);
+}
+
+form {
+    width: 260px;
+    position: absolute;
+    z-index: 5;
+    /*подумать*/
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: grid;
+    border-radius: 16px;
+    padding: 28px;
+    background-color: #fff;
+}
+
+.title {
+    color: var(--grey-green);
+    font-weight: 600;
+    font-size: 20px;
+    margin-bottom: 32px;
+}
+
+.authorization_form label {
+    position: relative;
+    margin-bottom: 32px;
+}
+
+.authorization_form input {
+    height: 40px;
+    width: 100%;
+    border-radius: 4px;
+    outline: none;
+    padding: 0 8px;
+    border: 2px solid var(--grey-green);
+    font-size: 12px;
+    color: var(--color-input);
+}
+
+.authorization_form span {
+    position: absolute;
+    left: 8px;
+    top: -8px;
+    font-size: 12px;
+    color: var(--grey-green);
+    background-color: #fff;
+    padding-inline: 4px;
+}
+
+.cancel_btn {
+    background-color: #fff;
+    color: var(--grey-green);
+    border: 2px solid var(--grey-green);
+    margin-right: 4px;
+}
+
+.form_buttons {
+    text-align: right;
+}

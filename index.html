@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&family=Roboto:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./styles/desktop_style.css">
+    <link rel="stylesheet" href="./styles/mobile_style.css">
+    <title>Authorization form</title>
+</head>
+
+<body>
+    <header>
+        <div class="user_wrapper">
+            <a class="user" href="#"></a>
+        </div>
+        <button class="burger_btn">
+            <div class="burger__dot"></div>
+            <div class="burger__dot"></div>
+            <div class="burger__dot"></div>
+        </button>
+        <div class="menu">
+            <ul>
+                <li class="active_tab"><a href="#home">Home</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
+            <div class="invisible_block"></div>
+            <button class="login_btn">Login</button>     
+        </div>
+    </header>
+    <main>
+        <form action="#" class="authorization_form hidden">
+            <div class="loader hidden"></div>
+            <div class="title">Login</div>
+            <label id="email">
+                <input type="text">
+                <span>Email</span>
+            </label>
+            <label id="password">
+                <input type="password" autocomplete="username">
+                <span>Password</span>
+            </label>
+            <div class="form_buttons">
+            <button class="cancel_btn">Cancel</button>
+            <button class="submit_btn">Login</button>
+        </div>
+        </form>
+        <div class="rectangle grey-green"></div>
+        <div class="rectangle brown"></div>
+        <div class="rectangle brown"></div>
+        <div class="rectangle grey-green"></div>
+        <div class="rectangle green"></div>
+        <div class="rectangle orange"></div>
+        <div class="rectangle grey"></div>
+        <div class="rectangle grey"></div>
+        <div class="rectangle orange"></div>
+    </main>
+    <footer>
+        <p>&copy; Copywright 2024</p>
+    </footer>
+    <script>
+        window.addEventListener('load', () => {
+                window.location.hash = '#home';
+        });
+
+        window.addEventListener('hashchange', () => {
+            const activeTab = document.querySelector('.active_tab');
+            if (activeTab) {
+                activeTab.classList.remove('active_tab');
+            }
+            const newActiveTab = document.querySelector(`a[href="${window.location.hash}"]`);
+            if (newActiveTab) {
+                newActiveTab.parentElement.classList.add('active_tab');
+            }
+        });
+    </script>
+    <script type="module" src="./index.js"></script>
+</body>
+
+</html>
