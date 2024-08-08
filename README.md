@@ -35,5 +35,6 @@ Simply open the index.html file in your preferred web browser to view the applic
 - Click on the "Login" button in the menu to open the authorization form.
 - Enter the username and password (use the format name.surname@example.com)
 - To obtain the verification result, the following test data can be used: **email: sophia.brown@x.dummyjson.com**, **password:sophiabpass**
+- You can also use any user data to check the successful result from the [test database](https://dummyjson.com/users)
 - The application will authenticate the user using the DummyJSON Auth API.
 - While the authentication is in progress, a loader will be displayed to indicate that the request is being processed.
